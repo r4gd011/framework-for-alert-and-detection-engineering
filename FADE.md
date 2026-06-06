@@ -30,12 +30,25 @@ A plain-language description of what the detection is attempting to identify and
 
 ## Attack Mapping
 
-All FADE detections are mapped to the [MITRE ATT&CK Framework](https://attack.mitre.org/). This section identifies the relevant tactic and technique and includes a direct hyperlink to the ATT&CK technique page. Consistent mapping enables gap analysis across the kill chain, supports threat-informed prioritization, and provides a shared language for communicating detection coverage to stakeholders.
+All FADE detections are mapped to the appropriate MITRE framework depending on the threat domain:
+
+- **Traditional and endpoint threats** map to the [MITRE ATT&CK Framework](https://attack.mitre.org/), using tactic and technique identifiers in the `T####.###` format.
+- **LLM and AI/ML threats** map to [MITRE ATLAS](https://atlas.mitre.org/) (Adversarial Threat Landscape for Artificial-Intelligence Systems), using tactic and technique identifiers in the `AML.T####` format.
+
+Consistent mapping enables gap analysis across the kill chain, supports threat-informed prioritization, and provides a shared language for communicating detection coverage across both traditional and AI threat surfaces.
 
 **This section should include:**
-- The ATT&CK Tactic (e.g., Execution, Persistence, Credential Access)
-- The ATT&CK Technique and Sub-technique, with link (e.g., [`T1059.001 — PowerShell`](https://attack.mitre.org/techniques/T1059/001/))
-- Any related techniques that are adjacent to or commonly paired with this detection
+- The applicable framework: MITRE ATT&CK (traditional threats) or MITRE ATLAS (LLM/AI threats)
+- The Tactic and Technique with a direct hyperlink to the technique page
+- Any sub-techniques or related techniques that are adjacent to or commonly paired with this detection
+
+**Format — MITRE ATT&CK (traditional/endpoint threats):**
+- **Tactic:** `<Tactic Name>`
+- **Technique:** [`T####.### — <Technique Name>`](https://attack.mitre.org/techniques/T####/)
+
+**Format — MITRE ATLAS (LLM and AI/ML threats):**
+- **Tactic:** `<Tactic Name>` (`AML.TA####`)
+- **Technique:** [`AML.T#### — <Technique Name>`](https://atlas.mitre.org/techniques/AML.T####/)
 
 ---
 

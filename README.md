@@ -36,11 +36,20 @@ A plain-language description of what this detection is attempting to identify. T
 
 ### Attack Mapping
 
-All detections are mapped to the [MITRE ATT&CK Framework](https://attack.mitre.org/). This section includes the relevant tactic and technique, with a direct hyperlink to the corresponding ATT&CK technique page. This enables gap analysis across the kill chain and provides a common language for describing attacker behavior.
+All detections are mapped to the appropriate MITRE framework depending on the threat domain:
 
-**Format:**
+- **Traditional and endpoint threats** map to the [MITRE ATT&CK Framework](https://attack.mitre.org/), using tactic and technique identifiers in the `T####.###` format.
+- **LLM and AI/ML threats** map to [MITRE ATLAS](https://atlas.mitre.org/) (Adversarial Threat Landscape for Artificial-Intelligence Systems), using tactic and technique identifiers in the `AML.T####` format.
+
+Consistent mapping enables gap analysis across the kill chain, supports threat-informed prioritization, and provides a common language for describing attacker behavior across both traditional and AI threat surfaces.
+
+**Format — MITRE ATT&CK (traditional/endpoint threats):**
 - **Tactic:** `<Tactic Name>`
 - **Technique:** [`T####.### — <Technique Name>`](https://attack.mitre.org/techniques/T####/)
+
+**Format — MITRE ATLAS (LLM and AI/ML threats):**
+- **Tactic:** `<Tactic Name>` (`AML.TA####`)
+- **Technique:** [`AML.T#### — <Technique Name>`](https://atlas.mitre.org/techniques/AML.T####/)
 
 ---
 
